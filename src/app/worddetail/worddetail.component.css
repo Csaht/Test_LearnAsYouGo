@@ -11,6 +11,9 @@
     display: flex;
     margin-left: 50px;
 }
+.info-box{
+    width: 50%;
+}
 .container-main{
     width: 90%;
     margin: auto;

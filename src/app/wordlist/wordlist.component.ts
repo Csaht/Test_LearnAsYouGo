@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
@@ -8,12 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./wordlist.component.css']
 })
 export class WordlistComponent implements OnInit {
+
   countryList:any = []
   countryDetails:any
   countryRegion:any
-  constructor(private dataService:DataService,
+
+  constructor(
+    private dataService:DataService,
     private  router:Router,
-    private cdr: ChangeDetectorRef
+    
   ){}
   
   ngOnInit(){
@@ -26,9 +29,9 @@ export class WordlistComponent implements OnInit {
      goToDetails(item:any){
       this.router.navigate(['country-details',item]);
      }
+
      handelOnSelect(searchVal:any){
-      console.log("searchVal--->",searchVal)
-      let filterdArray = this.countryList.filter((entry:any) => entry.region === searchVal);
+     let filterdArray = this.countryList.filter((entry:any) => entry.region === searchVal);
       this.countryDetails= filterdArray
       return filterdArray
       
