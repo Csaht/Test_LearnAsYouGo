@@ -1,0 +1,18 @@
+
+.container-first{
+    display: flex;
+    width: 75%;
+    margin: auto;
+}
+.container-first-section{
+    width: 50%;
+}
+.section-info{
+    display: flex;
+    margin-left: 50px;
+}
+.container-main{
+    width: 90%;
+    margin: auto;
+    margin-top: 140px;
+}

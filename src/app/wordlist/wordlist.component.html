@@ -1,0 +1,48 @@
+
+<div class="card-container">
+
+    <div class="searchDiv">
+       
+          
+          <span class="field-wrapper">
+            <!-- <span class="matfieldlabel">Password</span> -->
+             <mat-form-field class="example-full-width mat-form-field"  appearance="outline">
+               <input type="text" matInput placeholder="Enter Search val">
+            </mat-form-field>
+            
+          </span> 
+       
+        <div>
+            
+                <mat-form-field  appearance="outline">
+                  <mat-select  placeholder="Region"  (selectionChange)="handelOnSelect($event.value)" >
+                    <mat-option *ngFor="let item of countryRegion" [value]="item" >
+                    {{item}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               
+              
+        </div>
+    </div>
+
+    <div class="card-main">
+       <div  *ngFor="let countryDetail of countryDetails;let i = index" (click)="goToDetails(countryDetail)">
+        <span>
+          <mat-card class="example-card card-size" style="margin-bottom: 40px;">
+            <img mat-card-image src="{{countryDetail?.flag}}" alt="Photo of a Shiba Inu">
+             <mat-card-content>
+                 <h4>{{countryDetail?.name}}</h4>
+                 <p><strong>Populations:</strong>{{countryDetail?.population}}</p>
+                 <p><strong>Region:</strong>{{countryDetail?.region}}</p>
+                 <p><strong>Capital:</strong>{{countryDetail?.capital}}</p>
+            </mat-card-content>
+            
+          </mat-card>
+        </span>
+        <span *ngIf="(i + 1) % 4 === 0"><br></span>
+      </div>
+    
+    </div>
+</div>
+  
